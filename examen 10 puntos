@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class GameManager : MonoBehaviour
+{
+    [SerializeField] private int vidaActual = 100;
+    [SerializeField] private int dañoRecibido = 10;
+    
+
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+       vidaActual= vidaActual - dañoRecibido;
+
+        //-2000000
+
+        if (vidaActual >= 50)
+        {
+            Debug.Log("El jugador está en buena forma");
+        }
+        else if (vidaActual <= 35 && vidaActual > 0)
+        {
+            Debug.Log("El jugador está herido!");
+        }
+        else if (vidaActual <= 0)
+
+        {
+            Debug.Log("El jugador ha muerto...");
+        }
+    }
+}
